@@ -99,7 +99,7 @@ function send(type, res, str, mtime) {
   // Always assume we had compiled something that may have changed.
   res.setHeader('Last-Modified', mtime || (new Date()).toUTCString());
   res.setHeader('Content-Length', str.length);
-  res.setHeader('Content-Type', type);
+  res.setHeader('Content-Type', type + '; charset=utf8');
   res.end(str);
 }
 
